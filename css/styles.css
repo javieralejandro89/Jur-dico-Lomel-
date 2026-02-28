@@ -147,6 +147,7 @@ h2.section-title {
   position: relative; overflow: hidden;
   padding: 0 5%;
   background: linear-gradient(135deg, #0a1520 0%, #0d1b2a 40%, #162237 70%, #1a2e4a 100%);
+  
 }
 
 .hero-pattern {
@@ -159,7 +160,19 @@ h2.section-title {
   background-size: 100% 100%, 100% 100%, 50px 50px, 50px 50px;
 }
 
-.hero-content { position: relative; z-index: 2; max-width: 700px; animation: heroFadeIn 1s ease 0.2s both; }
+.hero-content { 
+  position: relative; 
+  z-index: 2; 
+  max-width: 750px; 
+  width: 100%; 
+  animation: heroFadeIn 1s ease 0.2s both; 
+}
+.hero-desc { 
+  font-size: 1rem; 
+  color: rgba(255,255,255,0.6); 
+  max-width: 650px; 
+  margin-bottom: 2.5rem; 
+}
 
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
@@ -191,7 +204,7 @@ h2.section-title {
 .hero-stat .lbl     { font-size: 0.75rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; line-height: 1.4; }
 
 /* ─── 6. NOSOTROS ───────────────────────────────────────────── */
-#nosotros { padding: var(--section-pad); background: var(--color-light); }
+#nosotros { padding: var(--section-pad); background: var(--color-light); overflow: hidden; }
 
 .nosotros-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
 
@@ -221,9 +234,10 @@ h2.section-title {
   border-radius: var(--radius-md); opacity: 0.3; z-index: 0; pointer-events: none;
 }
 .nosotros-img-wrap img {
-  width: 100%; height: 480px; object-fit: cover;
+  width: 100%; height: 640px; object-fit: cover;
   border-radius: var(--radius-md); position: relative; z-index: 1;
   box-shadow: var(--shadow-lg);
+  object-position: center 15%;
 }
 .img-overlay-badge {
   position: absolute; bottom: 24px; left: -24px; z-index: 2;
@@ -290,7 +304,11 @@ h2.section-title {
 }
 .cta-box h3 { font-family: var(--font-display); font-size: 1.6rem; color: var(--color-white); margin-bottom: 0.75rem; }
 .cta-desc   { color: rgba(255,255,255,0.55); margin-bottom: 1.5rem; }
-.cta-list   { margin-bottom: 2rem; text-align: left; display: inline-block; }
+.cta-list   { 
+  margin: 0 auto 2rem; 
+  text-align: left; 
+  display: table;  
+}
 .cta-list li { font-size: 0.9rem; color: rgba(255,255,255,0.7); padding: 0.3rem 0; display: flex; align-items: center; gap: 10px; }
 .cta-list li i { color: var(--color-gold); }
 
@@ -496,11 +514,26 @@ footer {
   .ubicacion-grid,
   .contacto-grid { grid-template-columns: 1fr; gap: 3rem; }
 
+  #inicio {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 110px;
+    padding-bottom: 60px;
+  }
+
   .hero-stats {
     position: static;
-    margin-top: 3rem;
+    margin-top: 2.5rem;
+    width: 100%;
     justify-content: flex-start;
-    flex-wrap: wrap;
+    gap: 2rem;
+    flex-wrap: nowrap;
+  }
+  .hero-btns .btn {
+    justify-content: center;
+    font-size: 1rem;
+    width: 100%;
   }
 
   .nosotros-img-wrap::before { display: none; }
